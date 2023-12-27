@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>CRUD OPPERATIONS</title>
+    </head>
+    <body>
+        <div>
+        <h2>Create Read Update Delete Operations</h2>
+        <p><a href="{{url_for('addusers')}}">Add Users</a></p>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            {% for data in datas %}
+            <tr>
+                <td>{{data.ID}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.Age}}</td>
+                <td>{{data.City}}</td>
+                <td><a href="{{url_for('edituser' , id=data.ID)}}">Edit</a></td>
+                <td><a href="{{url_for('deleteuser' , id=data.ID)}}">Delete</a></td>
+                
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </body>
+</html>
